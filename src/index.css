@@ -1,0 +1,1110 @@
+/*------------------------------- Globals -------------------------------*/
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration:none;
+}
+
+.wrapper {
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  perspective: 10px;
+  scroll-behavior: smooth;
+}
+
+.footer {
+  font-family: 'Space Mono', monospace;
+  height: fit-content;
+  min-height: 100px;
+  width: 100%;
+  background-color: #343233;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+}
+
+.footer p {
+  color: white;
+  text-align: center;
+}
+
+.footer-links {
+  height: auto;
+}
+
+.footer-links a {
+  height: 100%;
+}
+
+.footer-links img{
+  height: 30px;
+  width: 30px;
+  margin: 0 10px;
+  filter: invert(1);
+}
+
+/*------------------------------- Loader -------------------------------*/
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  30% {
+    transform: rotate(1turn);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+
+}
+
+@keyframes bounce-loader {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.spin {
+  animation: spin 3s ease 0s infinite normal none;
+}
+
+.bounce-loader {
+  animation: bounce-loader 2s ease-in-out infinite normal none;
+}
+
+.animation--delay-200{
+  animation-delay: 200ms;
+}
+
+.animation--delay-400{
+  animation-delay: 400ms;
+}
+
+.loader-wrapper {
+  height: 100vh;
+  width: 100%;
+  background-color: #f0e354;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-logo {
+  height: 500px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-message {
+  display: flex;
+  align-items: center;
+}
+
+.loader-message h3 {
+  margin-right: 8px;
+}
+
+.loader-message img {
+  height: 5px;
+  margin: 0 8px;
+  position: relative;
+  top: 5px;
+}
+
+.loader-disclaimer {
+  position: absolute;
+  bottom: 0;
+}
+
+/*-------------------------------NavBar-------------------------------*/
+
+.navbar {
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  backdrop-filter: blur(2px);/*DEMO*/
+  background: linear-gradient(180deg, rgba(0,0,0,0.4) 21%, rgba(255,255,255,0) 100%);/*DEMO*/
+  transition: 500ms;
+  height: 70px;
+  z-index: 50;
+}
+
+.sticking {
+  position: sticky;
+  background: white;
+  height: 55px;
+  border-bottom: 1px solid lightslategray;
+}
+
+.sticking .navigation-container .nav-list .nav-link {
+  color: black; 
+}
+
+.sticking .navigation-container .burger-menu {
+  filter: invert(0); 
+}
+
+.logo-container {
+  height: 100%;
+  width: 10%;
+  padding: 5px 15px;
+}
+
+.logo-container img {
+  height: calc(100% - 10px);
+  width: auto;
+}
+
+.navigation-container {
+  width: 80%;
+}
+
+.nav-list {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list-mobile {
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(0,0,0,0.7);
+  position: absolute;
+  top: 0;
+  right: -100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+  transition: 200ms;
+}
+
+.back-arrow-menu {
+  height: 50px;
+  filter: invert(1);
+  margin-left: auto;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+.nav-link-logo {
+  height: 80px;
+  margin: 30px 10px;
+  position: absolute;
+  top: 30px;
+  left: 10px;
+}
+
+.nav-link-logo img {
+  height: 100%;
+}
+
+.burger-menu {
+  height: 60%;
+  display: none;
+  filter: invert(1); 
+}
+
+.fil-non {
+  filter: invert(0); 
+}
+
+.nav-link {
+  font-family: 'Space Mono', monospace;
+  font-weight: bold;
+  color: white;
+  transition: 700ms;
+}
+
+.color-b {
+  color: black;
+}
+
+.nav-list-mobile .nav-link {
+  margin: 30px 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+
+.nav-link:hover {
+  padding-bottom: 10px;
+}
+
+.nav-list-mobile .nav-link:hover {
+  padding-bottom: 0px;
+}
+
+.contact-container {
+  width: 20%;
+  min-width: 189px;
+  display: flex;
+  align-items: center;
+}
+
+.styled-button {
+  font-family: 'Space Mono', monospace;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px 10px;
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 2ch;
+  color: black;
+  transition: 500ms;
+}
+
+.styled-button:hover {
+  background-color: #FDD823;
+  transform: scale(1.1);
+}
+
+@media only screen and (max-width: 650px) {
+  .nav-list { 
+    display: none;
+  }
+
+  .burger-menu { 
+    display: block;
+    margin: 10px;
+  }
+
+  .navigation-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+/*------------------------------- Home header -------------------------------*/
+
+@keyframes bounce {
+  0%,
+  75%,
+  90%,
+  100% {
+    transform: translateY(0);
+  }
+  85% {
+    transform: translateY(-25px);
+  }
+  95% {
+    transform: translateY(-10px);
+  }
+}
+
+.bounce {
+  animation: bounce 4s ease 0s infinite normal none;
+}
+
+.home-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+
+.background {
+  transform: translateZ(-5px) scale(1.7);
+  height: 100%;
+  width: 100%;
+}
+
+.title {
+  transform: translateZ(0px) scale(1);
+  margin-bottom: 10%;
+}
+
+.background,
+.title {
+  position: absolute;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.down-arrow-button {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 165px;
+}
+
+.down-arrow-button img {
+  width: 100%;
+  opacity: .8;
+  transition: 200ms;
+}
+
+.down-arrow-button:hover img {
+  filter: invert(0.5);
+}
+
+@media only screen and (max-width: 650px) {
+  .title {
+    position: relative;
+    width: 100%;
+    bottom: 20%;
+  }
+}
+
+/*------------------------------- Information section -------------------------------*/
+
+.info-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  z-index: -1;
+}
+
+.info-section-background {
+  position: absolute;
+  height: calc(100% + 30px);
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.info-section-container {
+  background-color: white;
+  border-radius: 0 20px 20px 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 80%;
+  height: fit-content;
+  min-height: 45%;
+  margin-left: 0;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  transform: translateX(-100%);
+  transition: 1500ms;
+}
+
+.info-section-text {
+  max-width: 60%;
+  margin: 10px 50px 10px 100px;
+}
+
+.info-section-title,
+.info-section-paragraph {
+  text-align: justify;
+}
+
+.info-section-title span {
+  color:lightseagreen;
+}
+
+.info-section-image {
+  width: 250px;
+  height: 250px;
+}
+
+@media only screen and (max-width: 950px) {
+  .info-section-container {
+    width: 100%;
+    height: fit-content;
+    border-radius: 0;
+  }
+  .info-section-text {
+    max-width: 80%;
+    margin: 0 20px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .info-section-container {
+    height: fit-content;
+  }
+  .info-section-text {
+    max-width: 100%;
+  }
+  .info-section-image {
+    display: none;
+  }
+}
+
+/*------------------------------- Tattoos preview -------------------------------*/
+
+.tattoos-section {
+  height: 100vh;
+}
+
+.tattoos-section-container {
+  width: 70%;
+  height: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10% 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tattoos-section-title{
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.tattoo-section-scroller-wrapper {
+  display: flex;
+  align-items: center;
+  align-self: center;
+}
+
+#prevBtn, 
+#nextBtn {
+  width: 30px;
+  height: 30px;
+  margin: 15px;
+  cursor: pointer;
+  border-style: solid;
+  border-radius: 100%;
+  padding: 5px;
+}
+
+.tattoos-section-scroller{
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+
+.tattoos-section-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.tattoos-section-scroller a {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.tattoo-section-image {
+  width: 33.3%;
+  object-fit: contain;
+  transition: 500ms;
+  cursor: pointer
+}
+
+.tattoo-section-image:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+}
+
+.popup-image-container {
+  background-color: rgb(0,0,0,0.9);
+  height: 110vh;
+  width: 90%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5%;
+  z-index: 2;
+  position: relative;
+  bottom: 105%
+}
+
+.popup-image-container span {
+  width: 45px;
+  height: 45px;
+  color: white;
+  font-size: 30px;
+  position: relative;
+  left: 50%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.popup-image-container img {
+  height: 50%;
+  object-fit: contain;
+}
+
+.tattoos-section-container .styled-button {
+  margin-top: 50px;
+}
+
+@media only screen and (max-width: 950px) {
+  .tattoo-section-image {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .tattoos-section-container {
+    width: 95%;
+  }
+  .tattoo-section-image {
+    width: 100%;
+  }
+  .popup-image-container img {
+    height: auto;
+    width: 70%;
+  }
+}
+
+/*------------------------------- Socials -------------------------------*/
+
+.socials {
+  height: calc(100vh - 70px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socials-container {
+  background-color: #343233;
+  width: 80%;
+  height: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.map-container {
+  height: 400px;
+  width: 400px;
+  margin: 10px;
+  
+}
+
+.socials-map {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.socials-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 50%;
+  height: 100%;
+  margin: 10px;
+}
+
+.socials-text .styled-button { 
+  margin-left: 5px;
+}
+
+.socials-media {
+  width: 100%;
+}
+
+.socials-aditional-info {
+  width: 100%;
+}
+
+.socials-text-item {
+  max-width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin: 15px 5px;
+}
+
+.socials-text-item p {
+  margin: 0 10px;
+  color: white;
+}
+
+.socials-text-item img {
+  height: 50px;
+  filter: invert(1);
+}
+
+.socials-text-item a {
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.socials-text-item a:hover {
+  padding-bottom: 5px;
+}
+
+@media only screen and (max-width: 950px) {
+  .socials-map {
+    width: 60%;
+  }
+
+  .socials-text {
+    justify-content: center;
+    width: 40%;
+  }
+
+  .socials-text-item {
+    height: fit-content;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .socials {
+    box-sizing: border-box;
+    padding-top: 55px;
+  }
+  
+  .socials-container {
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 90%;
+    padding: 10px 30px;
+  }
+
+  .socials-map {
+    width: 100%;
+    height: fit-content;
+  }
+
+  .map-container {
+    height: 200px;
+    width: 100%;
+    margin: 10px;
+  }
+
+  .socials-text {
+    flex-direction: column-reverse;
+    width: 100%;
+    height: fit-content;
+    margin: 0 5px;
+  }
+
+  .socials-aditional-info {
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    bottom: 45px;
+  }
+  
+  .socials-media {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 20px;
+  }
+  
+  .socials-media p {
+    display: none;
+  }
+
+  .socials-text-item {
+    margin: 5px 15px;
+  }
+
+  .socials-text-item a:hover {
+    padding-bottom: 0;
+  }
+
+  .socials-text .styled-button { 
+    margin-left: auto;
+    position: relative;
+    top: 140px;
+  }
+}
+
+/*------------------------------- ABOUT ME -------------------------------*/
+
+.about-section {
+  width: 100%;
+}
+
+.about-header {
+  height: 70vh;
+  position: relative;
+  z-index: -1;
+}
+
+.about-header img {
+  height: calc(100% + 70px);
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  top: -70px;
+}
+
+.about-header-text {
+  position: relative;
+  bottom: 55vh;
+  margin-left: 100px;
+  color: white;
+}
+
+.about-header-text h3 {
+  font-size: 30px;
+}
+
+.about-header-text p {
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.about-main {
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  padding-bottom: 100px;
+  background-image: url("src/assets/backgrounds/about-content.jpg");
+}
+
+.about-main h3 {
+  padding: 70px 0 80px 0;
+  margin: 0 auto;
+  width: fit-content;
+  font-size: 25px;
+  color: rgb(21, 71, 87);
+}
+
+.about-main-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -10;
+  position: absolute;
+  transform: translateZ(-5px) scale(1.7);
+}
+
+
+.about-container {
+  background-color: white;
+  border-radius: 0 20px 20px 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 90%;
+  height: fit-content;
+  min-height: 325px;
+  margin: 50px auto 100px 0;
+  display: flex;
+  align-items: center;
+  transform: translateX(-100%);
+  transition: 1500ms;
+}
+
+.reverse {
+  border-radius: 20px 0 0 20px;
+  margin: 50px 0 100px auto;
+  transform: translateX(100%);
+}
+
+.slide {
+  transform: translateX(0);
+}
+
+.about-container-text {
+  width: 60%;
+  margin: 10px 40px 10px 100px;
+}
+
+.about-container-title,
+.about-container-paragraph,
+.about-container-italic-text {
+  text-align: justify;
+}
+
+.about-container-italic-text {
+  font-style: italic;
+}
+
+.about-container img {
+  height: 250px;
+  width: 250px;
+  object-fit: contain;
+  margin: 20px;
+}
+
+.tattoo-border {
+  border-style: solid;
+  border-color: darkgreen;
+  border-radius: 100%;
+}
+
+.painting-border {
+  border-style: solid;
+  border-color: black;
+  border-radius: 100%;
+}
+
+@media only screen and (max-width: 950px) {
+  .about-container {
+    width: 100%;
+    height: fit-content;
+    border-radius: 0;
+  }
+  .about-container-text {
+    max-width: 80%;
+    margin: 0 20px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .about-container {
+    height: fit-content;
+    justify-content: center;
+  }
+  .about-container-text {
+    width: 100%;
+  }
+  .about-container img {
+    display: none;
+  }
+  .about-header-text {
+    width: fit-content;
+    margin: 0 20px 0 20px;
+  }
+}
+
+/*------------------------------- FAQ -------------------------------*/
+
+.faq-main {
+  width: 100%;
+}
+
+.faq-container {
+  box-sizing: border-box;
+  width: 85%;
+  margin: 0 auto;
+  background-color: #D9D9D9;
+  padding: 50px 20px 20px 20px;
+}
+
+.faq-container h3 {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 300;
+  margin: 30px auto;
+}
+
+.faq-container ol,
+.faq-container ul {
+  margin: 50px 0 30px 0;
+  padding: 0 30px;
+}
+
+.faq-container li {
+  text-align: justify;
+  margin: 10px;
+}
+
+.faq-red-message {
+  color: red;
+  text-align: inherit;
+  font-size: 25px;
+  font-weight: 300;
+  text-indent: 50px;
+  margin: 10px 0 -40px 0;
+}
+
+.faq-question {
+  width: 90%;
+  margin: 40px auto;
+}
+
+.faq-question h4,
+.faq-question p {
+  margin: 5px 0;
+  text-align: justify;
+}
+
+/*------------------------------- TATTOOS PAGE -------------------------------*/
+
+#gallery-header-background {
+  filter: brightness(0.8);
+}
+
+.gallery-section {
+  width: 100%;
+}
+
+.gallery-container {
+  box-sizing: border-box;
+  width: 85%;
+  margin: 0 auto;
+  padding: 50px 20px 20px 20px;
+}
+
+.gallery-container h3 {
+  text-align: center;
+  font-weight: 300;
+  font-size: 25px;
+  height: 10vh;
+}
+
+.gallery-images-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.gallery-images-container img {
+  width: 200px;
+  height: 200px;
+  margin: 10px auto;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.popup-gallery-image-container {
+  background-color: rgb(0,0,0,0.9);
+  height: 100%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5%;
+  z-index: 2;
+  position: sticky;
+  bottom: -1px;
+}
+
+.popup-gallery-image-container span {
+  width: 45px;
+  height: 45px;
+  color: white;
+  font-size: 30px;
+  position: relative;
+  left: 50%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.popup-gallery-image-container img {
+  height: 70%;
+  object-fit: contain;
+  position: sticky;
+  top: 25%;
+}
+
+@media only screen and (max-width: 650px) {
+
+  .gallery-images-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .gallery-images-container img {
+    width: 100%;
+    height: auto;
+    margin: 10px auto;
+    padding: 0;
+  }
+
+  .popup-gallery-image-container img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+/*------------------------------- CONTACT -------------------------------*/
+
+.contact {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  margin: 50px;
+}
+
+.contact textarea,
+.contact-field {
+  margin: 10px auto;
+  font-family: 'Poppins', sans-serif;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.contact textarea {
+  width: 97.5%;
+  grid-row: 3 / 4;
+  grid-column: 1 / 3;
+}
+
+.contact-field {
+  width: 95%;
+  height: 30px;
+}
+
+.contact-submit {
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  width: 100px;
+  height: 30px;
+  border-radius: 15px;
+  border-width: 1px;
+  margin: 10px auto;
+  background-color: black;
+  color: white;
+  grid-column: 1 / 3;
+}
+
+.email-msg {
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.email-msg img {
+  height: 50px;
+}
+
+.success-msg,
+.error-msg {
+  margin: 0 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 25px;
+}
+
+.success-msg {
+  color: green;
+}
+
+.error-msg {
+  color: red;
+}
+
+@media only screen and (max-width: 650px) {
+  .contact {
+    grid-template-columns: 100%;
+  }
+  .contact textarea {
+    width: 95%;
+    grid-row: auto;
+    grid-column: 1/2;
+  }
+  .contact-field {
+    grid-row: auto;
+    grid-column: 1/2;
+  }
+  .contact-submit {
+    grid-column: 1/2;
+  }
+  .contact-submit {
+    width: 95%;
+  }
+}
