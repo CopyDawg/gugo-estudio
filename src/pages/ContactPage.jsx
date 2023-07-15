@@ -1,7 +1,8 @@
 import { useRef } from "react";
 import emailjs from '@emailjs/browser';
-import { Footer, NavBar } from "../components";
+import { Footer, NavBar, EmailResponseMsg } from "../components";
 import { useForm } from "../hooks";
+import { getEnvVariables } from "../helpers";
 
 const contactFormFields = {
   name:         '',
@@ -13,19 +14,32 @@ const contactFormFields = {
 
 export const ContactPage = () => {
 
+  const env = getEnvVariables();
   const form = useRef();
   const { name, phone, email, size, description, onInputChange, onResetForm } = useForm( contactFormFields );
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    emailjs.sendForm('service_ux8x8or', 'template_t4tpgic', form.current, 'TYo-PGRkLyc-xCmx7')
-      .then((result) => {
-          console.log(result.text);
-          onResetForm();
-      }, (error) => {
-          console.log(error.text);
-      });
+    try {
+
+      let response = await emailjs.sendForm(env.VITE_EMAIL_SERVICE_ID, env.VITE_EMAIL_TEMPLATE_ID, form.current, env.VITE_EMAIL_PUBLIC_KEY)
+      console.log(response.text);
+      document.querySelector('.email-success').style.display = "flex";
+      document.querySelector('.email-success').classList.add("vanish");
+      setTimeout(() => {
+        document.querySelector('.email-success').style.display = "none";
+      }, 5000);
+      onResetForm();
+    }
+    catch(error) {
+      console.log(error);
+      document.querySelector('.email-error').style.display = "flex";
+      document.querySelector('.email-error').classList.add("vanish");
+      setTimeout(() => {
+        document.querySelector('.email-error').style.display = "none";
+      }, 5000);
+    }
   }
 
   return (
@@ -101,15 +115,7 @@ export const ContactPage = () => {
               />
             </form>
 
-            <div id="email-success" className="email-msg">
-              <img src="src\assets\icons\success.png" />
-              <h4 className="success-msg">Mensaje enviado correctamente.</h4>
-            </div>
-
-            <div id="email-error" className="email-msg">
-              <img src="src\assets\icons\error.png" />
-              <h4 className="error-msg">Error al enviar el mensaje, vuelva a intentar.</h4>
-            </div>
+            <EmailResponseMsg/>
             
 
           </div>
