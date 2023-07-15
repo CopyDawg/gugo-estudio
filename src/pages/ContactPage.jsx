@@ -2,7 +2,6 @@ import { useRef } from "react";
 import emailjs from '@emailjs/browser';
 import { Footer, NavBar, EmailResponseMsg } from "../components";
 import { useForm } from "../hooks";
-import { getEnvVariables } from "../helpers";
 
 const contactFormFields = {
   name:         '',
@@ -14,7 +13,6 @@ const contactFormFields = {
 
 export const ContactPage = () => {
 
-  const env = getEnvVariables();
   const form = useRef();
   const { name, phone, email, size, description, onInputChange, onResetForm } = useForm( contactFormFields );
 
@@ -23,7 +21,12 @@ export const ContactPage = () => {
 
     try {
 
-      let response = await emailjs.sendForm(env.VITE_EMAIL_SERVICE_ID, env.VITE_EMAIL_TEMPLATE_ID, form.current, env.VITE_EMAIL_PUBLIC_KEY)
+      let response = await emailjs.sendForm(
+        import.meta.env.VITE_EMAIL_SERVICE_ID, 
+        import.meta.env.VITE_EMAIL_TEMPLATE_ID, 
+        form.current, 
+        import.meta.env.VITE_EMAIL_PUBLIC_KEY
+      );
       console.log(response.text);
       document.querySelector('.email-success').style.display = "flex";
       document.querySelector('.email-success').classList.add("vanish");

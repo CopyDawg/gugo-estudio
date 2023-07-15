@@ -1,15 +1,11 @@
 import { useMemo } from 'react';
 import { GoogleMap, useLoadScript, MarkerF } from '@react-google-maps/api';
 import { NavLink } from 'react-router-dom';
-import { getEnvVariables } from '../helpers';
-
 
 export const Socials = () => {
-  
-  const env = getEnvVariables();
 
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: env.VITE_MAPS_API_KEY,
+    googleMapsApiKey: import.meta.env.VITE_MAPS_API_KEY,
   });
 
   return (
