@@ -1,4 +1,5 @@
-import React from 'react'
+import facebookLogo from '../assets/icons/facebook-logo.png';
+import instagramLogo from '../assets/icons/instagram-logo.png';
 
 export const Footer = () => {
     return (
@@ -6,10 +7,10 @@ export const Footer = () => {
           <p>Todos los derechos reservados © 2023 | Gugost estudio</p>
           <div className="footer-links">
             <a href="https://www.facebook.com/Gugotattoos" target="_blank">
-              <img src="src\assets\icons\facebook-logo.png"/>
+              <img src={facebookLogo}/>
             </a>
             <a href="https://www.instagram.com/gugost/" target="_blank">
-              <img src="src\assets\icons\instagram-logo.png"/>
+              <img src={instagramLogo}/>
             </a>
           </div>
         </footer>

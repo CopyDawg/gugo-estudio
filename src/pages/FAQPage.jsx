@@ -1,4 +1,5 @@
 import { Footer, NavBar } from "../components"
+import faqBackground from '../assets/backgrounds/faq-header.jpg'
 
 export const FAQPage = () => {
   return (
@@ -8,7 +9,7 @@ export const FAQPage = () => {
         
 
         <header className="about-header">
-          <img src="src\assets\backgrounds\faq-header.jpg"/>
+          <img src={faqBackground}/>
           <div className="about-header-text">
             <h3>Preguntas frecuentes y cuidados</h3>
             <p>Tips y medidas para cuidar tu tatuaje</p>

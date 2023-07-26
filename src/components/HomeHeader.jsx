@@ -1,27 +1,30 @@
 import { useEffect, useState } from "react"
+import homeBackground from '../assets/backgrounds/home-header.png';
+import homeMobileBackground from '../assets/backgrounds/home-header-mobile.png';
+import homeTitle from '../assets/gugost-title.png';
 
 export const HomeHeader = () => {
 
-    const [backgroundRef, setBackgroundRef] = useState('src/assets/backgrounds/home-header.png');
+    const [backgroundRef, setBackgroundRef] = useState(homeBackground);
     window.addEventListener('resize', (event) => {
 
         event.target.innerWidth > 650 
-        ? setBackgroundRef('src/assets/backgrounds/home-header.png')
-        : setBackgroundRef('src/assets/backgrounds/home-header-mobile.png')
+        ? setBackgroundRef(homeBackground)
+        : setBackgroundRef(homeMobileBackground)
         
     }, true);
 
     useEffect(() => {
       window.innerWidth > 650 
-      ? setBackgroundRef('src/assets/backgrounds/home-header.png')
-      : setBackgroundRef('src/assets/backgrounds/home-header-mobile.png')
+      ? setBackgroundRef(homeBackground)
+      : setBackgroundRef(homeMobileBackground)
     }, [])
     
 
     return (
         <header className="home-header">
             <img src={ backgroundRef } className="background"/>
-            <img src="src\assets\gugost-title.png" className="title"/>
+            <img src={homeTitle} className="title"/>
             <a className="down-arrow-button bounce" href="#info-section"><img src="src\assets\icons\down-arrow.png" alt="down arrow icon" /></a>
         </header>
     )

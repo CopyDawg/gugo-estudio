@@ -5,11 +5,8 @@ import { useState } from "react";
 export const AppRouter = () => {
 
     const [isLoaded, setIsLoaded] = useState(false);
-    window.addEventListener('load', (event) => {
-        // setTimeout(() => {
-        //     setIsLoaded(true);
-        //   }, 3000);
-          setIsLoaded(true);
+    window.addEventListener('load', () => {
+        setIsLoaded(true);
     });
 
     return (

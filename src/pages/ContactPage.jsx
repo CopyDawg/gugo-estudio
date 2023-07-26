@@ -3,6 +3,8 @@ import emailjs from '@emailjs/browser';
 import { Footer, NavBar, EmailResponseMsg } from "../components";
 import { useForm } from "../hooks";
 
+import contactBackground from '../assets/backgrounds/contact-header.jpg'
+
 const contactFormFields = {
   name:         '',
   phone:        '',
@@ -52,7 +54,7 @@ export const ContactPage = () => {
         
 
         <header className="about-header">
-          <img src="src\assets\backgrounds\contact-header.jpg"/>
+          <img src={contactBackground}/>
           <div className="about-header-text">
             <h3>Contacto</h3>
             <p>Me encantaría escuchar tu idea</p>

@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import { Footer, NavBar } from "../components"
 
+import galleryBackground from '../assets/backgrounds/tattoo-header.jpg';
+import tattoo2 from '../assets/tattoo_gallery/tattoo-2.jpg';
+
 export const TattoosPage = () => {
 
   useEffect(() => {
@@ -10,11 +13,12 @@ export const TattoosPage = () => {
   
 
   const handleOpenModal = (event) => {
+
     let modal = document.querySelector(".popup-gallery-image-container");
     let modalImage = document.querySelector(".popup-gallery-image");
 
     document.querySelector(".wrapper").style.overflowY = "hidden"; 
-    modalImage.src = event.target.currentSrc.replace(event.view.origin,'');
+    modalImage.src = event.target.currentSrc; //.replace(event.view.origin,'');
     modal.style.display = "flex";
     modal.style.top = screenY+'px';
   }
@@ -27,7 +31,7 @@ export const TattoosPage = () => {
 
   const imagesList = [];
   for (let i=1; i<=50; i++) {
-    imagesList.push(<img loading="lazy" onClick={handleOpenModal} key={i} src={`src/assets/tattoo_gallery/tattoo-${i}.jpg`}/>)
+    imagesList.push(<img loading="lazy" onClick={handleOpenModal} key={i} src={tattoo2.replace('2', i)}/>)
   }
 
   return (
@@ -36,7 +40,7 @@ export const TattoosPage = () => {
       <section className="about-section">
 
         <header className="about-header">
-          <img id="gallery-header-background" src="src\assets\backgrounds\tattoo-header.jpg"/>
+          <img id={galleryBackground} src="src\assets\backgrounds\tattoo-header.jpg"/>
           <div className="about-header-text">
             <h3>Galeria de tatuajes</h3>
             <p>Echa un vistazo a algunos de mis trabajos</p>
@@ -58,7 +62,7 @@ export const TattoosPage = () => {
 
       <div className="popup-gallery-image-container">
             <span onClick={handleCloseModal}>&times;</span>
-            <img src="src\assets\tattoo_gallery\tattoo-2.jpg" alt="tattoo preview" className="popup-gallery-image" />
+            <img src={tattoo2} alt="tattoo preview" className="popup-gallery-image" />
       </div>
 
     </div>    
