@@ -11,12 +11,6 @@ const tattoItems = new Array(tattoItemsCount).fill(0).map((_, index) => getTatto
 
 export const TattoosPage = () => {
 
-  useEffect(() => {
-    let modal = document.querySelector(".popup-gallery-image-container");
-    modal.style.display = "none";
-  }, [])
-  
-
   const handleOpenModal = (event) => {
 
     let modal = document.querySelector(".popup-gallery-image-container");
