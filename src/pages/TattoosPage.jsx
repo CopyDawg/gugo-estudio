@@ -18,7 +18,6 @@ export const TattoosPage = () => {
 
     modalImage.src = event.target.currentSrc; 
     modal.style.display = "flex";
-    modal.style.top = screenY+'px';
   }
 
   const handleCloseModal = () => {
