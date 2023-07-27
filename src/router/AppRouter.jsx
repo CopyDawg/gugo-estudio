@@ -14,7 +14,7 @@ export const AppRouter = () => {
             {
                 isLoaded
                 ? <Route path="/" element={ <HomePage/> } />
-                : <Route path="/" element={ <HomePage/> } />
+                : <Route path="/" element={ <Loading/> } />
             }
             <Route path="/tattoos" element={ <TattoosPage/> } />
             <Route path="/about" element={ <AboutPage/> } />
