@@ -1,13 +1,18 @@
 import { Navigate, Route, Routes } from "react-router-dom"
 import { AboutPage, ContactPage, FAQPage, HomePage, TattoosPage, Loading } from '../pages';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const AppRouter = () => {
 
     const [isLoaded, setIsLoaded] = useState(false);
-    window.addEventListener('load', () => {
-        setIsLoaded(true);
-    });
+
+    useEffect(() => {
+        window.addEventListener('load', () => {
+            setIsLoaded(true);
+        });
+    }, [])
+    
+    
 
     return (
         <Routes>
