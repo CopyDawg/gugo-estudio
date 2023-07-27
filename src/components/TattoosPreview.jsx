@@ -12,12 +12,13 @@ export const TattoosPreview = () => {
         let modalImage = document.querySelector(".popup-image");
 
         document.querySelector(".wrapper").style.overflowY = "hidden"; 
-        modalImage.src = event.target.currentSrc; //.replace(`${event.view.origin}`,'')
+        modalImage.src = event.target.currentSrc; 
         modal.style.display = "flex";
     }
 
     const handleCloseModal = () => {
         let modal = document.querySelector(".popup-image-container");
+
         document.querySelector(".wrapper").style.overflowY = "auto";
         modal.style.display = "none";
     }

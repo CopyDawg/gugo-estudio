@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Footer, NavBar } from "../components"
 
 import galleryBackground from '../assets/backgrounds/tattoo-header.jpg';
@@ -23,16 +22,10 @@ export const TattoosPage = () => {
 
   const handleCloseModal = () => {
     let modal = document.querySelector(".popup-gallery-image-container");
-    
+
     document.querySelector(".wrapper").style.overflowY = "auto";
     modal.style.display = "none";
   }
-
-
-  // const imagesList = [];
-  // for (let i=1; i<=50; i++) {
-  //   imagesList.push(<img loading="lazy" onClick={handleOpenModal} key={i} src={tattoo2.replace('2', i)}/>)
-  // }
 
   return (
     <div className="wrapper">
