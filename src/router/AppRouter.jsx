@@ -4,23 +4,11 @@ import { useEffect, useState } from "react";
 
 export const AppRouter = () => {
 
-    const [isLoaded, setIsLoaded] = useState(false);
-
-    useEffect(() => {
-        window.addEventListener('load', () => {
-            setIsLoaded(true);
-        });
-    }, [])
-    
-    
-
     return (
         <Routes>
-            {
-                isLoaded
-                ? <Route path="/" element={ <HomePage/> } />
-                : <Route path="/" element={ <Loading/> } />
-            }
+      
+            <Route path="/" element={ <HomePage/> } />
+    
             <Route path="/tattoos" element={ <TattoosPage/> } />
             <Route path="/about" element={ <AboutPage/> } />
             <Route path="/faq" element={ <FAQPage/> } />
