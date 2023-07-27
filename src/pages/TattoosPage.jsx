@@ -22,7 +22,6 @@ export const TattoosPage = () => {
     let modal = document.querySelector(".popup-gallery-image-container");
     let modalImage = document.querySelector(".popup-gallery-image");
 
-    document.querySelector(".wrapper").style.overflowY = "hidden"; 
     modalImage.src = event.target.currentSrc; 
     modal.style.display = "flex";
     modal.style.top = screenY+'px';
@@ -30,7 +29,6 @@ export const TattoosPage = () => {
 
   const handleCloseModal = () => {
     let modal = document.querySelector(".popup-gallery-image-container");
-    document.querySelector(".wrapper").style.overflowY = "auto";
     modal.style.display = "none";
   }
 
