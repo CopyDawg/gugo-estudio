@@ -58,7 +58,7 @@ export const TattoosPage = () => {
             <h3>Explora tatuajes</h3>
             <div className="gallery-images-container">
               { tattoItems.map((tattoItem, index) => (
-                <img  src={tattoItem} alt={`tattoo preview-${index}`} key={index} onClick={handleOpenModal} className="gallery-image" />
+                <img  src={tattoItem} alt={`tattoo preview-${index}`} key={index} loading="lazy" onClick={handleOpenModal} className="gallery-image" />
               ))}
             </div>
           </div>
