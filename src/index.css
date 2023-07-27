@@ -361,9 +361,6 @@ a {
   transition: 200ms;
 }
 
-.down-arrow-button:hover img {
-  filter: invert(0.5);
-}
 
 @media only screen and (max-width: 650px) {
   .title {
