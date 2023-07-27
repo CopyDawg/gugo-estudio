@@ -26,8 +26,8 @@ export const HomePage = () => {
           <div className="info-section-container" >
               <div className="info-section-text">
                   <h2 className="info-section-title">Estudio de tatuajes <span>Gugost</span></h2>
-                  <p className="info-section-paragraph">Gugost estudio ofrece la oportunidad de obtener un tatuaje único y personalizado. Trabajamos estrechamente contigo para convertir tus ideas en un diseño exclusivo que refleje tu estilo y personalidad.
-Tu seguridad y satisfacción son nuestra máxima prioridad. Gugost estudio cumple con todas las normas de higiene y esterilización, utilizando equipos desechables y esterilizados para garantizar un ambiente limpio y seguro. Además, se cuenta con personal altamente capacitado y con amplia experiencia en el arte del tatuaje.</p>
+                  <p className="info-section-paragraph">Gugost estudio ofrece la oportunidad de obtener un tatuaje único y personalizado. Trabajo estrechamente contigo para convertir tus ideas en un diseño exclusivo que refleje tu estilo y personalidad.
+Tu seguridad y satisfacción es mi máxima prioridad. Gugost estudio cumple con todas las normas de higiene y esterilización, utilizando equipos desechables y esterilizados para garantizar un ambiente limpio y seguro. Además, se cuenta con personal altamente capacitado y con amplia experiencia en el arte del tatuaje.</p>
               </div>
               <img src={tattooInfo} alt="tattoo image" className="info-section-image" />
           </div>
