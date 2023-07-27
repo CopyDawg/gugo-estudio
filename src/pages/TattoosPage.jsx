@@ -35,7 +35,7 @@ export const TattoosPage = () => {
         <header className="about-header">
           <img id="gallery-header-background" src={galleryBackground}/>
           <div className="about-header-text">
-            <h3>Galeria de tatuajes</h3>
+            <h3>Galería de tatuajes</h3>
             <p>Echa un vistazo a algunos de mis trabajos</p>
           </div>
         </header>
