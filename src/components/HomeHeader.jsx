@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import homeBackground from '../assets/backgrounds/home-header.png';
 import homeMobileBackground from '../assets/backgrounds/home-header-mobile.png';
 import homeTitle from '../assets/gugost-title.png';
+import downArrow from '../assets/icons/down-arrow.png';
 
 export const HomeHeader = () => {
 
@@ -25,7 +26,7 @@ export const HomeHeader = () => {
         <header className="home-header">
             <img src={ backgroundRef } className="background"/>
             <img src={homeTitle} className="title"/>
-            <a className="down-arrow-button bounce" href="#info-section"><img src="src\assets\icons\down-arrow.png" alt="down arrow icon" /></a>
+            <a className="down-arrow-button bounce" href="#info-section"><img src={downArrow} alt="down arrow icon" /></a>
         </header>
     )
 }

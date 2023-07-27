@@ -2,7 +2,12 @@ import { useEffect } from "react";
 import { Footer, NavBar } from "../components"
 
 import galleryBackground from '../assets/backgrounds/tattoo-header.jpg';
-import tattoo2 from '../assets/tattoo_gallery/tattoo-2.jpg';
+
+const getTattoPath = (tattooNumber) => `/tattoo_gallery/tattoo-${tattooNumber}.jpg`;
+
+const tattoItemsCount = 50;
+
+const tattoItems = new Array(tattoItemsCount).fill(0).map((_, index) => getTattoPath(index+1));
 
 export const TattoosPage = () => {
 
@@ -18,7 +23,7 @@ export const TattoosPage = () => {
     let modalImage = document.querySelector(".popup-gallery-image");
 
     document.querySelector(".wrapper").style.overflowY = "hidden"; 
-    modalImage.src = event.target.currentSrc; //.replace(event.view.origin,'');
+    modalImage.src = event.target.currentSrc; 
     modal.style.display = "flex";
     modal.style.top = screenY+'px';
   }
@@ -29,10 +34,11 @@ export const TattoosPage = () => {
     modal.style.display = "none";
   }
 
-  const imagesList = [];
-  for (let i=1; i<=50; i++) {
-    imagesList.push(<img loading="lazy" onClick={handleOpenModal} key={i} src={tattoo2.replace('2', i)}/>)
-  }
+
+  // const imagesList = [];
+  // for (let i=1; i<=50; i++) {
+  //   imagesList.push(<img loading="lazy" onClick={handleOpenModal} key={i} src={tattoo2.replace('2', i)}/>)
+  // }
 
   return (
     <div className="wrapper">
@@ -40,7 +46,7 @@ export const TattoosPage = () => {
       <section className="about-section">
 
         <header className="about-header">
-          <img id={galleryBackground} src="src\assets\backgrounds\tattoo-header.jpg"/>
+          <img id="gallery-header-background" src={galleryBackground}/>
           <div className="about-header-text">
             <h3>Galeria de tatuajes</h3>
             <p>Echa un vistazo a algunos de mis trabajos</p>
@@ -51,7 +57,9 @@ export const TattoosPage = () => {
           <div className="gallery-container">
             <h3>Explora tatuajes</h3>
             <div className="gallery-images-container">
-              {imagesList}
+              { tattoItems.map((tattoItem, index) => (
+                <img  src={tattoItem} alt={`tattoo preview-${index}`} key={index} onClick={handleOpenModal} className="gallery-image" />
+              ))}
             </div>
           </div>
         </main>
@@ -62,7 +70,7 @@ export const TattoosPage = () => {
 
       <div className="popup-gallery-image-container">
             <span onClick={handleCloseModal}>&times;</span>
-            <img src={tattoo2} alt="tattoo preview" className="popup-gallery-image" />
+            <img src="/tattoo_gallery/tattoo-2.jpg" alt="tattoo preview" className="popup-gallery-image" />
       </div>
 
     </div>    
